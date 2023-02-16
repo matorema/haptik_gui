@@ -4,7 +4,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 from PIL import ImageTk, Image
 
-class MyFirstGUI:
+class GUI:
     def __init__(self, root):
         self.root = root
         root.title("PCCL Haptik GUI")
@@ -39,8 +39,6 @@ class MyFirstGUI:
         self.imagebox.pack(side=tk.TOP)
         self.imagebox.configure(background='LightBlue2')
 
-        
-        
     def choose_folder(self):
         filename = filedialog.askdirectory()
         if filename:
@@ -62,5 +60,5 @@ class MyFirstGUI:
 
 if __name__ == "__main__":
     root = Tk()
-    my_gui = MyFirstGUI(root)
+    my_gui = GUI(root)
     root.mainloop()
