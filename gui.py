@@ -12,7 +12,7 @@ class MyFirstGUI:
         root.maxsize(650, 900)
         root.minsize(650, 900)
         root.configure(background='LightBlue2')
-        self.header_image = ImageTk.PhotoImage(Image.open("pccl.jpeg"))
+        self.header_image = ImageTk.PhotoImage(Image.open("images/pccl.jpeg"))
 
         #header with pccl image
         self.header = tk.Label(root)
@@ -52,7 +52,7 @@ class MyFirstGUI:
             self.warning("Choose the folder first")
         else:
             self.start_inspection_button["state"] = "disabled"
-            image = ImageTk.PhotoImage(Image.open("qrcode.png"))
+            image = ImageTk.PhotoImage(Image.open("images/qrcode.png"))
             self.imagebox.config(image=image)
             self.imagebox.image = image
 
