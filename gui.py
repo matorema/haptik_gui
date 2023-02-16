@@ -8,24 +8,38 @@ class MyFirstGUI:
     def __init__(self, root):
         self.root = root
         root.title("PCCL Haptik GUI")
-        root.geometry("1024x768")
-        root.maxsize(1280, 1024)
+        root.geometry("650x900")
+        root.maxsize(650, 900)
+        root.minsize(650, 900)
+        root.configure(background='LightBlue2')
+        self.header_image = ImageTk.PhotoImage(Image.open("pccl.jpeg"))
+
+        #header with pccl image
+        self.header = tk.Label(root)
+        self.header.pack(side=tk.TOP)
+        self.header.config(image=self.header_image)
+        self.header.image = self.header_image
+        self.header.configure(background='LightBlue2')
 
         # label to show the chosen folder
         self.label = Label(root, text=None, font=('Calibri 15 bold'))
-        self.label.pack(side=tk.BOTTOM, padx=5, pady=5)
+        self.label.pack(side=tk.BOTTOM)
+        self.label.configure(background='LightBlue2')
 
         # button to choose the folder
         self.choose_folder_button = Button(root, text="Choose Folder", command=self.choose_folder)
-        self.choose_folder_button.pack(side=tk.BOTTOM, padx=5, pady=5)
+        self.choose_folder_button.pack(side=tk.BOTTOM)
 
         # button to start something
         self.start_inspection_button = Button(root, text="Start Something", command=self.start_inspection)
-        self.start_inspection_button.pack(side=tk.BOTTOM, padx=5, pady=5)
+        self.start_inspection_button.pack(side=tk.BOTTOM)
 
         #place holder for the result image
         self.imagebox = tk.Label(root)
-        self.imagebox.pack()
+        self.imagebox.pack(side=tk.TOP)
+        self.imagebox.configure(background='LightBlue2')
+
+        
         
     def choose_folder(self):
         filename = filedialog.askdirectory()
@@ -46,7 +60,7 @@ class MyFirstGUI:
         messagebox.showinfo("Warning", msg)
         
 
-
-root = Tk()
-my_gui = MyFirstGUI(root)
-root.mainloop()
+if __name__ == "__main__":
+    root = Tk()
+    my_gui = MyFirstGUI(root)
+    root.mainloop()
